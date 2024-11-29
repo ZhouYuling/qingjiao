@@ -13,6 +13,7 @@
     <module>calllog_project</module>
       <module>SampleTestMV</module>
       <module>KafkaSynergySuite</module>
+      <module>hiveudf</module>
   </modules>
 
   <properties>

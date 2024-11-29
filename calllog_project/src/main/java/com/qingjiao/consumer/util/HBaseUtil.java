@@ -1,7 +1,5 @@
 package com.qingjiao.consumer.util;
 
-package com.qingjiao.consumer.util;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -244,7 +242,7 @@ public class HBaseUtil {
         // 取出年月，例如202302，2023-02-28 21:10:27
         String yearMonth = callTime.substring(0, 7).replace("-", "");
         // 异或后与初始化设定的region个数求模（crc校验采用异或算法）
-        int regionNum = Math.abs(last4Num.hashCode() ^ yearMonth.hashCode()) % regionCount;
+        int regionNum = Math.abs(call1.hashCode() ^ yearMonth.hashCode()) % regionCount;
         return regionNum; // 返回分区号
     }
 

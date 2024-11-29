@@ -31,6 +31,7 @@ LINES TERMINATED BY '\n'  -- 每行以换行符结束
 IGNORE 1 LINES;           -- 如果文件的第一行是标题行，则忽略它
 
 
+# 3. 通话记录统计表
 CREATE TABLE calllog.ct_call (
     id INT(11) NOT NULL AUTO_INCREMENT,
     telid INT(11) NOT NULL,
@@ -41,3 +42,7 @@ CREATE TABLE calllog.ct_call (
     FOREIGN KEY (telid) REFERENCES calllog.ct_user(id),
     FOREIGN KEY (dateid) REFERENCES calllog.call_date(id)
 );
+
+
+
+
