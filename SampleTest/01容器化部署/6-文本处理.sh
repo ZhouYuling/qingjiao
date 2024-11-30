@@ -27,7 +27,7 @@ def tokenizer(texts):
     word_cut[]
     # 遍历每个句子，对句子进行分词、去停用河
     for text in texts:
-        words = [word for word in jieba.???(text,cut_all-???) if word not in stop_words] # 使用jieba进行精确模式分词(返回可迭代对象），并去除停用词
+        words = [word for word in jieba.???(text,cut_all=???) if word not in stop_words] # 使用jieba进行精确模式分词(返回可迭代对象），并去除停用词
         word_cut.append(words)
     return word_cut
 #tokenizer_text = tokenizer(texts)
@@ -64,7 +64,7 @@ def build_vocab(texts, tokenizer, max_size, min_freq):[
     return vocab_dic
 
 #通过满用 build_vocab 函数可以得到一个词汇表，将单词映射为它们在词汇表中的索引
-vocab - build_vocab(texts, tokenizer, MAX_VOCAB_SIZE, MIN_WORD_FREQ)
+vocab = build_vocab(texts, tokenizer, MAX_VOCAB_SIZE, MIN_WORD_FREQ)
 vocab
 
 #补充如下：
@@ -120,19 +120,19 @@ def collate_batch(batch):
     return text_list, label_list
 
 #创建训练、测试和验证的数据藥尖例
-train_data- TextDataset(train)# 训练
+train_data = TextDataset(train)# 训练
 test_data = TextDataset(test) # 测试
 valid_data = TextDataset(valid) # 短通
 
 batch_size=32
 #创建训练、测试和验证的DataLoader实例
-train_loader - DataLoader(???, batch_size=batch_size, shuffle=???, ???) # 训练
+train_loader = DataLoader(???, batch_size=batch_size, shuffle=???, ???) # 训练
 test_loader = DataLoader(???, batch_size=batch_size, shuffle=???, ???) # 测试
 valid_loader = DataLoader(???, batch_size=batch_size, shuffle=???, ???) # 验证
 
 #修改为：
 text_list = pad_sequence(text_list, batch_first=True, padding_value=vocab['<PAD>'])
-train_loader - DataLoader(train_data, batch_size=batch_size, shuffle=True, collate_fn=collate_batch) # 训练
+train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, collate_fn=collate_batch) # 训练
 test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False, collate_fn=collate_batch) # 测试
 valid_loader = DataLoader(valid_data, batch_size=batch_size, shuffle=False, collate_fn=collate_batch) # 验证
 
