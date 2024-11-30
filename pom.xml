@@ -14,6 +14,7 @@
       <module>SampleTestMV</module>
       <module>KafkaSynergySuite</module>
       <module>hiveudf</module>
+      <module>sogouanalysis</module>
   </modules>
 
   <properties>
