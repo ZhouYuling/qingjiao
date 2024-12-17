@@ -68,11 +68,11 @@ vim core-site.xml
 <property>
 <name>fs.defaultFS</name>
 <value>hdfs://node01:9000</value>
-<property>
+</property>
 <property>
 <name>hadoop.tmp.dir</name>
 <value>/root/software/hadoop-3.1.3/data</value>
-<property>
+</property>
 </configuration>
 
 vim hdfs-site.xml
@@ -80,11 +80,11 @@ vim hdfs-site.xml
 <property>
 <name>dfs.namenode.http-address</name>
 <value>node01:9870</value>
-<property>
+</property>
 <property>
 <name>dfs.replication</name>
 <value>3</value>
-<property>
+</property>
 </configuration>
 
 vim mapred-site.xml
@@ -92,19 +92,19 @@ vim mapred-site.xml
 <property>
 <name>mapreduce.framework.name</name>
 <value>yarn</value>
-<property>
+</property>
 <property>
 <name>yarn.app.mapreduce.am.env</name>
 <value>HADOOP_MAPRED_HOME=/root/software/hadoop-3.1.3</value>
-<property>
+</property>
 <property>
 <name>mapreduce.map.env</name>
 <value>HADOOP_MAPRED_HOME=/root/software/hadoop-3.1.3</value>
-<property>
+</property>
 <property>
 <name>mapreduce.reduce.env</name>
 <value>HADOOP_MAPRED_HOME=/root/software/hadoop-3.1.3</value>
-<property>
+</property>
 </configuration>
 
 vim yarn-site.xml
@@ -112,23 +112,23 @@ vim yarn-site.xml
 <property>
 <name>yarn.nodemanger.aux-services</name>
 <value>mapreduce_shuffle</value>
-<property>
+</property>
 <property>
 <name>yarn.resourcemanager.hostname</name>
 <value>node01</value>
-<property>
+</property>
 <property>
 <name>yarn.resourcemanger.address</name>
 <value>node01:8032</value>
-<property>
+</property>
 <property>
 <name>yarn.resourcemanger.scheduler.address</name>
 <value>node01:8030</value>
-<property>
+</property>
 <property>
 <name>yarn.nodemanger.env-whitelist</name>
 <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
-<property>
+</property>
 </configuration>
 
 vim workers
@@ -141,7 +141,7 @@ scp -r /root/software/hadoop-3.1.3 root@node03:/root/software
 
 vim /etc/hosts
 export HADOOP_HOME=/root/software/hadoop-3.1.3
-export PATH=$PATH:$HAOOP_HOME/bin:$HADOOP_HOME/sbin
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 export HDFS_NAMENODE_USER=root
 export HDFS_DATANODE_USER=root
 export HDFS_SECONDARYNAMENODE_USER=root
@@ -183,19 +183,19 @@ vim hive-site.xml
 <property>
 <name>javx.jdo.option.ConnectionURL</name>
 <value>jdbc:mysql://node03:3306/hivedb?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8</value>
-<property>
+</property>
 <property>
 <name>javax.jdo.option.ConnectionDriverName</name>
 <value>com.mysql.jdbc.Driver</value>
-<property>
+</property>
 <property>
 <name>javax.jdo.option.ConnectionUserName</name>
 <value>root</value>
-<property>
+</property>
 <property>
 <name>javax.jdo.option.ConnectionPassword</name>
 <value>123456</value>
-<property>
+</property>
 </configuration>
 
 cp /root/sofware/mysql-connector-5.1.37-bin.jar /root/software/apache-hive-3.1.2-bin/lib
